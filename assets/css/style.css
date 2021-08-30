@@ -45,7 +45,7 @@ h6 {
 .btn-add,
 .btn-save {
   background-color: #FA8BFF;
-  background-image: linear-gradient(45 deg, #FA8BFF 0%,
+  background-image: linear-gradient(45deg, #FA8BFF 0%,
   #2BD2FF 52%, #2BDF88 90%);
   transition: all .5s ease-out;
   background-size: 1px 100px;

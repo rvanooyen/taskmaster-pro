@@ -83,23 +83,19 @@ $(".card .list-group").sortable({
   helper: "clone",
   activate: function(event, ui) {
     $(this).addClass("dropover");
-    $("#trash").addClass("bottom-trash-drag");
+    $(".bottom-trash").addClass("bottom-trash-drag");
     console.log(ui);
   },
   deactivate: function(event, ui) {
     $(this).removeClass("dropover");
-    $("#trash").removeClass("bottom-trash-drag");
+    $(".bottom-trash").removeClass("bottom-trash-drag");
     console.log(ui);
   },
   over: function(event) {
     $(event.target).addClass("dropover-active");
-    $("#trash").addClass("bottom-trash-active");
-    console.log(event);
   },
   out: function(event) {
-    $(event.target).removeClass("dropover-active");
-    $("#trash").removeClass("bottom-trash-active");
-    console.log(event);
+    $(event.target).removeClass("dropover-active");    
   },
   update: function() {
     var tempArr = [];
@@ -142,12 +138,14 @@ $("#trash").droppable({
   drop: function(event, ui) {
     // remove dragged element from the dom
     ui.draggable.remove();
+    $(".bottom-trash").removeClass("bottom-trash-active");
   },
   over: function(event, ui) {
     console.log(ui);
+    $(".bottom-trash").addClass("bottom-trash-active");
   },
   out: function(event, ui) {
-    console.log(ui);
+    $(".bottom-trash").removeClass("bottom-trash-active");
   }
 });
 
